@@ -76,7 +76,7 @@ $(document).ready(function() {
     var sel = $('<select>').appendTo('.select-car');
     $(sel).addClass('select').addClass('option');
     $(sel).attr('name', 'select-car').attr('id', 'selectCar').attr('required', true);
-    $(sel).append($('<option>').attr('value', 'Оберіть авто').text('Оберіть авто').attr('selected', 'selected').attr('disabled', 'disabled'));
+    $(sel).append($('<option>').attr('value', 'Choose a car').text('Choose a car').attr('selected', 'selected').attr('disabled', 'disabled'));
     $(cars).each(function() {
         sel.append($("<option>").attr('value', this.val).text(this.text).attr('data-value', this.marka));
 
