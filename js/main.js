@@ -1,24 +1,14 @@
-var swiper = new Swiper('.swiper-container', {
 
-    autoplay: {
-        delay: 7000,
-    },
-    speed: 1800,
-    effect: "fade",
-    slidesPerView: 1,
-
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
 
 $(document).ready(function() {
+
+     
+  $('.callTo').on("click", function() {
+    var value = $(this).data("value");
+    localStorage.setItem('value', value);
+  });
+
+
     $(function() {
         var dateFormat = "mm/dd/yy",
             from = $("#from")
@@ -117,6 +107,14 @@ $(document).ready(function() {
         return false;
     });
 
+    var localValue = localStorage.getItem("value");
+    if (localValue) {
+  
+      $('#selectCar')
+            .find("option[data-value="+localValue+"]")
+            .prop('selected',true)
+            .trigger('change');
+    }
 
 });
 
